@@ -1,8 +1,12 @@
 Приложение управления заказами и АPI  заказов.
 Стек
+
 -python 3.11
+
 -isort black mypy. flake8
+
 -django 5.1.7
+
 -SQLite
 
 
