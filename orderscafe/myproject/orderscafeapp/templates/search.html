@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+{% for product in all_search_results %}
+
+        <h3>{{product.id}}</h3>
+        <p>{{product.table_number}}</p>
+        {%for i in  product.items.all%}
+     {{i}}</p>
+     {%endfor%}
+       
+        <p>{{product.total_price}}</p>
+        <p>{{product.status}}</p>
+       
+       
+    {% empty %}
+        <h2>No results found</h2>
+{% endfor %}
+{% endblock content %}

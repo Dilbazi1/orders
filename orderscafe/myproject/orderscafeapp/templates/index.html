@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+
+{% for item in object_list %}
+<h4> Order Id :{{item.id}}</h4>
+<p> Table Number: {{item.table_number}}</p>
+<p> Dishes: </p>
+<p>      {%for i in  item.items.all%}
+    <li>
+     {{i}}</li> </p>
+     {%endfor%}
+<p> Total Price: {{item.total_price}}</p>
+<p> Satus: {{item.status}}</p> 
+<a href="{% url 'orderscafe:delete'  item.id %}"> delete</a>
+<a href="{% url 'orderscafe:delete-func'  item.id %}">delete permanently</a>
+<a href="{% url 'orderscafe:update-status'  item.id %}">update status</a>
+<a href="{% url 'orderscafe:update-items'  item.id %}">update items </a>
+{% endfor %}
+    
+{% endblock content %}
